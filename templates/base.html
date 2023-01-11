@@ -58,33 +58,52 @@
     <form action="/" method="POST">
         <div class="form">
             <div class="row">
-                <div class="col"> <b>Email Adress </b> <br>
+                <div class="col"> 
+                    <br>
+                    <b>Email Address </b> <br>
                     <input type="email" name="username" style="border-radius: 5px;" required="required">
                 </div>
-                <div class="col"><b>Password</b> <br>
-                    <input type="password" name="password" style="border-radius: 5px;" required>
-                </div>
-            </div>
-
-            <div class="row" style="margin-top: 50px;">
                 <div class="col">
                     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
                     <br>
                     <label for="providor"><b>IMAP server</b></label>
                     <div class="popup" onclick="myFunction()">&nbsp; ?
-                        <span class="popuptext addMore" id="bmi">
+                        <span class="popuptext addMore" id="imap">
                             <p>Refers to your account providor(e.g. hotmail)</p>
                         </span>
                     </div>
                     <br>
-                    <select name="providor" id="providor" style="border-radius: 5px;" required>
+                    <select name="providor" id="providor" style="border-radius: 5px; width: 200px;" required>
                         <option value="outlook.office365.com">Outlook</option>
                         <option value="imap.gmail.com">Gmail</option>
                         <option value="imap.mail.yahoo.com">Yahoo</option>
                     </select>
 
                 </div>
+            </div>
+
+            <div class="row" style="margin-top: 50px;">
+                <div class="col"><b>Password</b>
+                    <div class="popup" onclick="myFunction1()">&nbsp; ?
+                        <span class="popuptext addMore" id="password">
+                            <p>Use password generator to get special password. Your default password may not work </p>
+                        </span>
+                    </div>
+                     <br>
+                    <input type="password" name="password" style="border-radius: 5px;" required>
+                </div>
+
+                <div class="col"><b>No. of emails</b>
+                    <div class="popup" onclick="myFunction2()">&nbsp; ?
+                        <span class="popuptext addMore" id="total">
+                            <p>Number of emails to scan from top </p>
+                        </span>
+                    </div>
+                     <br>
+                    <input type="number" name="total" min="1" max="30" style="border-radius: 5px;" required>
+                </div>
+                
 
             </div>
 
@@ -92,7 +111,7 @@
 
                 <div class="col-4"></div>
                 <div class="col-4"> <button type="submit" class="btn btn-primary"
-                        style="width: 200px;border-radius: 5px;margin-bottom: 20px; align-items: center;"
+                        style="width: 200px;border-radius: 5px;margin-bottom: 20px; "
                         onclick="loader()">Submit</button>
                 </div>
                 <div class="col-4"></div>
@@ -101,49 +120,24 @@
         </div>
     </form>
 
-</body>
-<script>
-    loader()
-    {
-        const div = document.createElement('body');
 
-        div.className = 'body';
 
-        div.innerHTML = `
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
     
-<div class="book">
-  <div class="inner">
-    <div class="left"></div>
-    <div class="middle"></div>
-    <div class="right"></div>
-  </div>
-  <ul>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-  </ul>
-</div><a class="dribbble" href="https://dribbble.com/shots/7199149-Book-Loader" target="_blank"><img src="https://dribbble.com/assets/logo-small-2x-9fe74d2ad7b25fba0f50168523c15fda4c35534f9ea0b1011179275383035439.png"/></a>
-  `;
 
-        document.getElementById('body-pd').append(body);
+    <footer>
+        <p>For any queries, refer to readme document in the repository.</p>
+    </footer>
 
-    }
-</script>
+</body>
+
 <script src="/static/script.js"></script>
 <script src="/static/check.js"></script>
 

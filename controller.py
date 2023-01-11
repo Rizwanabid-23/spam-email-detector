@@ -45,7 +45,8 @@ def account():
     ham_var=0
     status, messages = imap.select("INBOX")
     # number of top emails to fetch
-    N = 25
+    N = int(data['total'])
+    
     # total number of emails
     messages = int(messages[0])
 
