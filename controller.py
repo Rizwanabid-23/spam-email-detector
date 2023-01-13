@@ -28,9 +28,7 @@ def account():
     username = data['username']
     password=data['password']
     imap_server=data['providor']
-    # account credentials
-    # username = "rizwanabid2@hotmail.com"
-    # password = "xxsmxgpkknqnjzht"
+    
     # use your email provider's IMAP server, you can look for your provider's IMAP server on Google
     # or check this page: https://www.systoolsgroup.com/imap/
     # for office 365, it's this:
