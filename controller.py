@@ -86,13 +86,13 @@ def account():
                             # body=body.replace("<table>","").replace("</table>","").replace("<tr>","").replace("</tr>","").replace("<td>","").replace("</td>","").replace("\n","")
                             body=body.replace("\n","")
                             body=cleanhtml(body)
-                            print(" new body:"+body)
+                            # print(" new body:"+body)
                             status=spamChecker(body)
                             
-                            print("Status:",status)
+                            # print("Status:",status)
                             if "spotify" in body or "nayapay" or "Yahoo" in body:
                                 status[0]="ham"
-                            print("new status:",status)
+                            # print("new status:",status)
                             f = open("checkerFile.txt", "a")
                             f.write("subject: "+subject+" From: "+From+"Body: "+body+"\n")
                             f.close()
@@ -100,7 +100,8 @@ def account():
                             pass
                         if content_type == "text/plain" and "attachment" not in content_disposition:
                             # print text/plain emails and skip attachments
-                            print("body:",body)
+                            # print("body:",body)
+                            pass
                         elif "attachment" in content_disposition:
                             # download attachment
                             filename = part.get_filename()
@@ -127,11 +128,11 @@ def account():
                         # body=body.replace("<table>","").replace("</table>","").replace("<tr>","").replace("</tr>","").replace("<td>","").replace("</td>","").replace("\n","")
                         body=body.replace("\n","")
                         body=cleanhtml(body)
-                        print("new body:",body)
-                        print("Status:",status)
+                        # print("new body:",body)
+                        # print("Status:",status)
                         if "spotify" in body or "nayapay" in body or "Yahoo" in body:
                                 status[0]="ham"
-                        print("new staus:",status)
+                        # print("new staus:",status)
                         f = open("checkerFile.txt", "a")
                         f.write("subject: "+subject+" From: "+From+"Body: "+body+"\n")
                         f.close()
@@ -144,11 +145,11 @@ def account():
                     body=body.replace("\n","")
                     body=cleanhtml(body)
                     status=spamChecker(body)
-                    print("new body:",body)
-                    print("Status:",status)
+                    # print("new body:",body)
+                    # print("Status:",status)
                     if "spotify" in body or  "nayapay" in body or "Yahoo" in body:
                             status[0]="ham"
-                    print("new staus:",status)
+                    # print("new staus:",status)
                     # subject=subject.replace(" 'b ","").replace(" ' ","")
                     subject=str(subject)
                     f = open("checkerFile.txt", "a")
